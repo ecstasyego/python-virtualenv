@@ -83,7 +83,7 @@ env_name
 ```
 
 `/home/user/main.py`
-```bash
+```python
 import dash
 from dash import dcc, html
 
