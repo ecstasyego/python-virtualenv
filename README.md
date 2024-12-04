@@ -2,7 +2,7 @@
 
 ```bash
 $ pip install virtualenv
-$ virtualenv env_name
+$ virtualenv -python=python3.7 env_name
 $ source env_name/bin/activate # windows: env_name/bin/activate
 ```
 
