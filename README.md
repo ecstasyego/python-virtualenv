@@ -71,7 +71,10 @@ env_name
 
 ## pythonanywhere
 - https://www.pythonanywhere.com/
-
+    - WEB/Code: Source code
+    - WEB/Code: WSGI configuration file
+    - WEB/Virtualenv: Virtual environment path
+      
 `hosting server file system`
 ```
 /home/user/
