@@ -72,7 +72,18 @@ env_name
 ## pythonanywhere
 - https://www.pythonanywhere.com/
 
+`hosting server`
+```
+/home/user/
+├── virtual_environment
+└── sourcecode
+```
 
+
+`/var/www/yourusername_pythonanywhere_com_wsgi.py`
+```python
+
+```
 
 
 
