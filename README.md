@@ -72,17 +72,54 @@ env_name
 ## pythonanywhere
 - https://www.pythonanywhere.com/
 
-`hosting server`
+`hosting server file system`
 ```
 /home/user/
 ├── virtual_environment
 └── sourcecode
+    └── main.py
+/var/www/
+└── user_pythonanywhere_com_wsgi.py
 ```
 
+`/home/user/main.py`
+```bash
+import dash
+from dash import dcc, html
 
-`/var/www/yourusername_pythonanywhere_com_wsgi.py`
+app = dash.Dash(__name__)
+app.layout = html.Div([
+    html.H1("Hello Dash"),
+    dcc.Graph(
+        id='example-graph',
+        figure={
+            'data': [{
+                'x': [1, 2, 3],
+                'y': [10, 11, 12],
+                'type': 'line',
+                'name': 'Sample Data'
+            }],
+            'layout': {
+                'title': 'Sample Graph'
+            }
+        }
+    )
+])
+
+if __name__ == "__main__":
+    app.run_server(debug=True)
+```
+
+`/var/www/user_pythonanywhere_com_wsgi.py: dash`
 ```python
+import sys
 
+path = '/home/user/sourcecode'
+if path not in sys.path:
+    sys.path.append(path)
+
+from main import app
+application = app.server
 ```
 
 
